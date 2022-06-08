@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div th:each="person : ${people}">
+    <a th:href="@{/user/{id}(id=${person.getId()})}"
+       th:text="${person.getName() + ', ' + person.getAge() + ', '+ person.getEmail()}"
+    ></a>
+</div>
+<hr>
+<a href="/user/new">Create new user</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div th:text="${person.getName()}"></div>
+<div th:text="${person.getId() + ', ' + person.getEmail()}"></div>
+<a th:href="@{/user/{id}/edit(id=${person.getId()})}">Edit</a>
+<form th:method="DELETE" th:action="@{/user/{id}(id=${person.getId()})}">
+    <input type="submit" value="DELETE">
+</form>
+</body>
+</html>
