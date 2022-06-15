@@ -17,14 +17,19 @@ public class Person {
     @Max(value = 120, message = "Age < 120")
     private int age;
 
+    // Страна, Город, Индекс (6 цифр)
+    @Pattern(regexp = "[A-Z]\\w+, [A-Z]\\w+, \\d{6}", message = "Your address in format Country, City, Index(6 digits)")
+    private String address;
+
     public Person() {
     }
 
-    public Person(int id, String name, String email, int age) {
+    public Person(int id, String name, String email, int age, String address) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.age = age;
+        this.address = address;
     }
 
     public String getEmail() {
@@ -59,6 +64,14 @@ public class Person {
         this.name = name;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
@@ -66,6 +79,7 @@ public class Person {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", age=" + age +
+                ", address='" + address + '\'' +
                 '}';
     }
 }

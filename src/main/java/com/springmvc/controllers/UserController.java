@@ -2,6 +2,7 @@ package com.springmvc.controllers;
 
 import com.springmvc.dao.PersonDAO;
 import com.springmvc.models.Person;
+import com.springmvc.util.PersonValidator;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,9 +16,11 @@ import java.util.List;
 public class UserController {
 
     private final PersonDAO personDAO;
+    private final PersonValidator personValidator;
 
-    public UserController(PersonDAO personDAO) {
+    public UserController(PersonDAO personDAO, PersonValidator personValidator) {
         this.personDAO = personDAO;
+        this.personValidator = personValidator;
     }
 
     @GetMapping()
@@ -40,9 +43,11 @@ public class UserController {
     }
 
     @PostMapping()
-    public String create(@Valid @ModelAttribute("person")
-                                 Person person,
-                         BindingResult bindingResult) {
+    public String create(@Valid @ModelAttribute("person") Person person,
+                         BindingResult bindingResult)
+    {
+        personValidator.validate(person, bindingResult);
+
         if (bindingResult.hasErrors()) {
             return "users/new";
         }
@@ -59,7 +64,10 @@ public class UserController {
     @PatchMapping("/{id}")
     public String update(@Valid @ModelAttribute("person") Person person,
                          BindingResult bindingResult,
-                         @PathVariable("id") int id) {
+                         @PathVariable("id") int id)
+    {
+        personValidator.validate(person, bindingResult);
+
         if (bindingResult.hasErrors()) return "users/edit";
 
         personDAO.update(id, person);

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="alishev_test@localhost" uuid="3ed67707-a4cd-4a85-bf32-385c2342d9bb">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/alishev_test</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="spring_nvc@localhost" uuid="ac496804-ba71-4828-b681-3f3876467c50">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/spring_nvc</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="spring_mvc@localhost" uuid="a71e87e7-9f4b-4733-8769-05b3b38c8e67">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/spring_mvc</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="spring_mvc@localhost [2]" uuid="0603d879-65b9-48b1-b79c-2b35dbc66990">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/spring_mvc</jdbc-url>
+    </data-source>
+  </component>
+</project>
